@@ -13,7 +13,7 @@ export function createGallery(images) {
       image => `
       <li class="gallery-item">
         <a href="${image.largeImageURL}">
-          <img src="${image.webformatURL}" alt="${image.tags}" loading="lazy" />
+          <img src="${image.webformatURL}" alt="${image.tags}" />
         </a>
       </li>`
     )

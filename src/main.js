@@ -20,7 +20,7 @@ let totalHits = 0;
 
 form.addEventListener('submit', async e => {
   e.preventDefault();
-  currentQuery = e.target.searchQuery.value.trim();
+  currentQuery = e.target.elements.searchQuery.value.trim();
   if (!currentQuery) return;
 
   currentPage = 1;
