@@ -1,25 +1,30 @@
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
-const galleryContainer = document.querySelector('.gallery');
-const loadMoreBtn = document.querySelector('.load-more');
+const galleryEl = document.querySelector('.gallery');
 const loader = document.querySelector('.loader');
+const loadMoreBtn = document.querySelector('.load-more');
 
 const lightbox = new SimpleLightbox('.gallery a');
 
 export function createGallery(images) {
-  const markup = images.map(image => `
-    <a href="${image.largeImageURL}" class="gallery-item">
-      <img src="${image.webformatURL}" alt="${image.tags}" loading="lazy" />
-    </a>
-  `).join('');
+  const markup = images
+    .map(
+      image => `
+      <li class="gallery-item">
+        <a href="${image.largeImageURL}">
+          <img src="${image.webformatURL}" alt="${image.tags}" loading="lazy" />
+        </a>
+      </li>`
+    )
+    .join('');
 
-  galleryContainer.insertAdjacentHTML('beforeend', markup);
+  galleryEl.insertAdjacentHTML('beforeend', markup);
   lightbox.refresh();
 }
 
 export function clearGallery() {
-  galleryContainer.innerHTML = '';
+  galleryEl.innerHTML = '';
 }
 
 export function showLoader() {
