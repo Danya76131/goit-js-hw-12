@@ -1,25 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="uk">
 <head>
   <meta charset="UTF-8" />
-  <title>Image Search App</title>
-  <link rel="stylesheet" href="./css/styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Пошук зображень</title>
+  <link rel="stylesheet" href="./styles.css" />
 </head>
-
 <body>
-  <form>
-    <input type="text" name="search" placeholder="Search images..." />
+  <form class="form">
+    <input type="text" name="searchQuery" placeholder="Search images..." required autocomplete="off" />
     <button type="submit">Search</button>
   </form>
 
-  <div class="gallery"></div>
+  <ul class="gallery"></ul>
+
+  <span class="loader hidden">Loading...</span>
 
   <button class="load-more hidden">Load more</button>
-  <div class="loader hidden">Loading...</div>
-
 
   <script type="module" src="./main.js"></script>
+ 
 </body>
 
 </html>
