@@ -20,6 +20,9 @@ export function createGallery(images) {
     .join('');
 
   galleryEl.insertAdjacentHTML('beforeend', markup);
+
+  // Створення або оновлення екземпляра lightbox
+  const lightbox = new SimpleLightbox('.gallery a');
   lightbox.refresh();
 }
 
