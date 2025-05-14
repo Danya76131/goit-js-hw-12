@@ -82,6 +82,15 @@ loadMoreBtn.addEventListener('click', async () => {
 
     createGallery(data.hits);
 
+    const firstCard = document.querySelector('.gallery-item');
+    if (firstCard) {
+      const cardHeight = firstCard.getBoundingClientRect().height;
+      window.scrollBy({
+        top: cardHeight * 2,
+        behavior: 'smooth',
+      });
+    }
+
     if (data.totalHits <= currentPage * perPage) {
       loadMoreBtn.classList.add('is-hidden');
     }
